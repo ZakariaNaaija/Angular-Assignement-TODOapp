@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="panel">
+
+        <div class="form-group">
+        <label for="exampleInputEmail1">nom</label>
+        <input class="form-control" [(ngModel)]="nom">
+        </div>
+        <div class="form-group">
+        <label for="exampleInputPassword1">contenu</label>
+        <input class="form-control" [(ngModel)]="contenu">
+        </div>
+        <button class="btn btn-primary" (click)="addTodo()">Add</button>
+        <button class="btn btn-success ml-5" (click)="showTodos()">Show Todos</button>
+
+        <table class="mt-5">
+            <tr>
+                <th>Nom</th>
+                <th>Contenu</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let todo of todos">
+                <td>{{todo.nom}}</td>
+                <td>{{todo.contenu}}</td>
+                <td><button class="btn btn-danger" (click)="deleteTodo(todo)">delete</button></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
